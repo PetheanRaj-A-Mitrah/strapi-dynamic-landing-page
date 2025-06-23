@@ -1,0 +1,18 @@
+{
+  "collectionName": "components_elements_menu_items",
+  "info": {
+    "displayName": "menu-item"
+  },
+  "options": {},
+  "attributes": {
+    "name": {
+      "type": "string"
+    },
+    "href": {
+      "type": "string"
+    },
+    "isExternal": {
+      "type": "boolean"
+    }
+  }
+}

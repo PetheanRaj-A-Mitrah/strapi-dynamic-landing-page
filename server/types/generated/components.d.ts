@@ -107,6 +107,7 @@ export interface ElementsLink extends Struct.ComponentSchema {
   attributes: {
     href: Schema.Attribute.String;
     isExternal: Schema.Attribute.Boolean & Schema.Attribute.DefaultTo<false>;
+    MenuItems: Schema.Attribute.Component<'elements.menu-item', true>;
     text: Schema.Attribute.String;
   };
 }
@@ -119,6 +120,18 @@ export interface ElementsLogo extends Struct.ComponentSchema {
   attributes: {
     image: Schema.Attribute.Media<'images'>;
     logoText: Schema.Attribute.String;
+  };
+}
+
+export interface ElementsMenuItem extends Struct.ComponentSchema {
+  collectionName: 'components_elements_menu_items';
+  info: {
+    displayName: 'menu-item';
+  };
+  attributes: {
+    href: Schema.Attribute.String;
+    isExternal: Schema.Attribute.Boolean;
+    name: Schema.Attribute.String;
   };
 }
 
@@ -161,6 +174,7 @@ declare module '@strapi/strapi' {
       'blocks.subscribe': BlocksSubscribe;
       'elements.link': ElementsLink;
       'elements.logo': ElementsLogo;
+      'elements.menu-item': ElementsMenuItem;
       'layout.footer': LayoutFooter;
       'layout.header': LayoutHeader;
     }

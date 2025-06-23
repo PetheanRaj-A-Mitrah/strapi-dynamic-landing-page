@@ -1,7 +1,8 @@
 {
   "collectionName": "components_elements_links",
   "info": {
-    "displayName": "Link"
+    "displayName": "Link",
+    "description": ""
   },
   "options": {},
   "attributes": {
@@ -14,6 +15,11 @@
     "isExternal": {
       "type": "boolean",
       "default": false
+    },
+    "MenuItems": {
+      "type": "component",
+      "repeatable": true,
+      "component": "elements.menu-item"
     }
   }
 }

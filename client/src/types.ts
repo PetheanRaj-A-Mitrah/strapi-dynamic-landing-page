@@ -2,7 +2,9 @@ export interface LinkProps {
   id: number;
   text: string;
   href: string;
+  name?: string;
   isExternal: boolean;
+  MenuItems?: LinkProps[];
 }
 
 export interface ImageProps {

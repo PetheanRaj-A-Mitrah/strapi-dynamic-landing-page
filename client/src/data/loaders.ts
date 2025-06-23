@@ -112,7 +112,9 @@ const globalSettingQuery = qs.stringify({
             },
           },
         },
-        navigation: true,
+        navigation: {
+          populate: ['MenuItems'],
+        },
         cta: true,
       },
     },
@@ -130,6 +132,8 @@ const globalSettingQuery = qs.stringify({
       },
     },
   },
+}, {
+  encodeValuesOnly: true,
 });
 
 export async function getGlobalSettings() {

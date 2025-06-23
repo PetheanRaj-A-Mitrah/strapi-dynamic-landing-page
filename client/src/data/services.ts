@@ -1,7 +1,7 @@
 const BASE_URL = process.env.STRAPI_API_URL ?? "http://127.0.0.1:1337";
 
 export async function subscribeService(email: string) {
-  const url = new URL("/api/newsletter-signups", BASE_URL);
+  const url = new URL("/api/newsletter-sign-ups", BASE_URL);
 
   try {
     const response = await fetch(url, {

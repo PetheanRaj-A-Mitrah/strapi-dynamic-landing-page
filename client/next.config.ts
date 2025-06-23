@@ -14,3 +14,20 @@ const nextConfig: NextConfig = {
 };
 
 export default nextConfig;
+
+
+// import type { NextConfig } from "next";
+
+// const nextConfig: NextConfig = {
+//   images: {
+//     remotePatterns: [
+//       {
+//         protocol: "https",
+//         hostname: "powerful-garden-6b4073cb38.media.strapiapp.com",
+//         pathname: "/**",
+//       },
+//     ],
+//   },
+// };
+
+// export default nextConfig;

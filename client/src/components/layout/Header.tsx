@@ -19,6 +19,7 @@ export function Header({ data }: HeaderProps) {
   if (!data) return null;
 
   const { logo, navigation, cta } = data;
+  console.log(`Header.tsx 22 navigation---->`,navigation)
   return (
     <header className={`header ${headerLight ? "header--light" : ""}`}>
       <Link href="/">
@@ -34,13 +35,32 @@ export function Header({ data }: HeaderProps) {
       </Link>
       <ul className="header__nav">
         {navigation.map((item) => (
-          <li key={item.id}>
+          <li
+            key={item.id}
+            className={
+              item.MenuItems && item.MenuItems.length ? "has-dropdown" : ""
+            }
+          >
             <Link
               href={item.href}
               target={item.isExternal ? "_blank" : "_self"}
             >
               <h5>{item.text}</h5>
             </Link>
+            {item.MenuItems && item.MenuItems.length > 0 && (
+              <ul className="dropdown">
+                {item.MenuItems.map((sub) => (
+                  <li key={sub.id}>
+                    <Link
+                      href={sub.href}
+                      target={sub.isExternal ? "_blank" : "_self"}
+                    >
+                      {sub.name}
+                    </Link>
+                  </li>
+                ))}
+              </ul>
+            )}
           </li>
         ))}
       </ul>
